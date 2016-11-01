@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Responsive Design Tools</title>
+    <script data-require="vue.js@*" data-semver="1.0.17"
+            src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.js"></script>
+    <meta charset='utf-8'>
+    <link rel="stylesheet" href="style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, minimum-scale=0.5">
+</head>
+
+<body>
+<div id="app">
+    <section class="font-size">
+        <h1>Font-size</h1>
+        Healine: <input v-model="h_font_size" type="number"> px <br>
+        Paragraph: <input v-model="p_font_size" type="number"> px <br>
+
+        <h2 v-bind:style="{'font-size': h_font_size + 'px'}">Headline</h2>
+        <p class="demo-p" v-bind:style="{'font-size': p_font_size + 'px'}">
+            Lorem ipsum dolor sit amet, no viderer nostrum cum, sed an epicurei
+            suscipiantur. Adhuc causae efficiendi per no, lorem doctus electram
+            nec ei, oratio option qui at. Nec idque velit augue ea. At mei quis
+            persecuti incorrupte. Modus graecis ei sed, voluptua adolescens
+            signiferumque sea eu, eu dolor nostrud eruditi eos.
+            Cum ea atqui dolorum nostrum.
+        </p>
+    </section>
+
+    <section class="button-size">
+        <h1>Button Size</h1>
+
+        Width: <input v-model="button_width" type="number"> px <br>
+        Height: <input v-model="button_height" type="number"> px <br>
+
+        <div class="demo-button" v-bind:style="{width: button_width + 'px', height: button_height + 'px'}">
+            <span>Okay</span>
+        </div>
+    </section
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>
