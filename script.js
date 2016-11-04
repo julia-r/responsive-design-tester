@@ -16,7 +16,11 @@ var vm = new Vue({
         },
         button: {
             width: 44,
-            height: 44
+            height: 44,
+            font_size: 12,
+            uppercase: false,
+            font_family: "Verdana",
+            google_font: false
         },
 
     },
@@ -43,6 +47,14 @@ var vm = new Vue({
                 return "none"
             }
         },
+        button_text_transform: function (){
+            if(this.button.uppercase){
+                return "uppercase"
+            }
+            else {
+                return "none"
+            }
+        },
         headlineStyle: function (){
             return {
                 fontSize: this.headline.font_size + "px",
@@ -55,6 +67,15 @@ var vm = new Vue({
                 fontSize: this.paragraph.font_size + "px",
                 fontFamily: this.paragraph.font_family,
                 textTransform: this.paragraph_text_transform
+            }
+        },
+        buttonStyle: function (){
+            return {
+                width: this.button.width + "px",
+                height: this.button.height + "px",
+                fontSize: this.button.font_size + "px",
+                fontFamily: this.button.font_family,
+                textTransform: this.button_text_transform
             }
         }
     },
