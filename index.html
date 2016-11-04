@@ -34,8 +34,9 @@
             Uppercase?<input v-model="paragraph.uppercase" type="checkbox">
         </div>
 
-        <h2 v-bind:style="headlineStyle">Headline</h2>
-        <p class="demo-p" v-bind:style="paragraphStyle">
+        <h2 v-bind:style="headlineStyle" contenteditable="true">Demo Headline</h2>
+        <p class="demo-p" v-bind:style="paragraphStyle" contenteditable="true">
+            I am a demo paragraph. Style me, so that I am readable. Change me by clicking / tapping and editing.
             Lorem ipsum dolor sit amet, no viderer nostrum cum, sed an epicurei
             suscipiantur. Adhuc causae efficiendi per no, lorem doctus electram
             nec ei, oratio option qui at. Nec idque velit augue ea. At mei quis
@@ -52,7 +53,7 @@
         <div class="option">Height: {{button.height}}px<input v-model="button.height" type="range"  min="1" max="500"></div>
 
         <div class="demo-button" v-bind:style="{width: button.width + 'px', height: button.height + 'px'}">
-            <span>Okay</span>
+            <span contenteditable="true">Okay</span>
         </div>
     </section>
 
