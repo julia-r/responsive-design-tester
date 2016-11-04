@@ -13,22 +13,29 @@
 <body>
 <div id="app">
     <section class="font-size">
-        <h1>Font-size</h1>
+        <h1>Font-Styling</h1>
         <div class="option">
-            Headline:  {{headline.font_size}}px
-            <input v-model="headline.font_size" type="range" min="6" max="150">
+            <h2>Headline</h2>
+            Font-Size:
+            {{headline.font_size}}px
+            <input v-model="headline.font_size" type="range" min="6" max="150"><br>
+            Font-Family:
             <input v-model="headline.font_family" type="text">
-            Is this a Google webfont?<input v-model="headline.google_font" type="checkbox">
+            Is this a Google webfont?<input v-model="headline.google_font" type="checkbox"><br>
+            Uppercase?<input v-model="headline.uppercase" type="checkbox">
         </div>
         <div class="option">
-            Paragraph: {{paragraph.font_size}}px
-            <input v-model="paragraph.font_size" type="range" min="6" max="150">
+            <h2>Paragraph:</h2>
+            Font-Size: {{paragraph.font_size}}px
+            <input v-model="paragraph.font_size" type="range" min="6" max="150"><br>
+            Font-Family:
             <input v-model="paragraph.font_family" type="text">
-            Is this a Google webfont?<input v-model="paragraph.google_font" type="checkbox">
+            Is this a Google webfont?<input v-model="paragraph.google_font" type="checkbox"><br>
+            Uppercase?<input v-model="paragraph.uppercase" type="checkbox">
         </div>
 
-        <h2 v-bind:style="{'font-size': headline.font_size + 'px', 'font-family': headline.font_family}">Headline</h2>
-        <p class="demo-p" v-bind:style="{'font-size': paragraph.font_size + 'px', 'font-family': paragraph.font_family}">
+        <h2 v-bind:style="headlineStyle">Headline</h2>
+        <p class="demo-p" v-bind:style="paragraphStyle">
             Lorem ipsum dolor sit amet, no viderer nostrum cum, sed an epicurei
             suscipiantur. Adhuc causae efficiendi per no, lorem doctus electram
             nec ei, oratio option qui at. Nec idque velit augue ea. At mei quis
