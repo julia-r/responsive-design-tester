@@ -14,11 +14,21 @@
 <div id="app">
     <section class="font-size">
         <h1>Font-size</h1>
-        <div class="option">Headline:  {{h_font_size}}px <input v-model="h_font_size" type="range" min="6" max="150"></div>
-        <div class="option">Paragraph: {{p_font_size}}px <input v-model="p_font_size" type="range" min="6" max="150"></div>
+        <div class="option">
+            Headline:  {{headline.font_size}}px
+            <input v-model="headline.font_size" type="range" min="6" max="150">
+            <input v-model="headline.font_family" type="text">
+            Is this a Google webfont?<input v-model="headline.google_font" type="checkbox">
+        </div>
+        <div class="option">
+            Paragraph: {{paragraph.font_size}}px
+            <input v-model="paragraph.font_size" type="range" min="6" max="150">
+            <input v-model="paragraph.font_family" type="text">
+            Is this a Google webfont?<input v-model="paragraph.google_font" type="checkbox">
+        </div>
 
-        <h2 v-bind:style="{'font-size': h_font_size + 'px'}">Headline</h2>
-        <p class="demo-p" v-bind:style="{'font-size': p_font_size + 'px'}">
+        <h2 v-bind:style="{'font-size': headline.font_size + 'px', 'font-family': headline.font_family}">Headline</h2>
+        <p class="demo-p" v-bind:style="{'font-size': paragraph.font_size + 'px', 'font-family': paragraph.font_family}">
             Lorem ipsum dolor sit amet, no viderer nostrum cum, sed an epicurei
             suscipiantur. Adhuc causae efficiendi per no, lorem doctus electram
             nec ei, oratio option qui at. Nec idque velit augue ea. At mei quis
@@ -31,13 +41,21 @@
     <section class="button-size">
         <h1>Button Size</h1>
 
-        <div class="option">Width: {{button_width}}px<input v-model="button_width"  type="range" min="1" max="500"></div>
-        <div class="option">Height: {{button_height}}px<input v-model="button_height" type="range"  min="1" max="500"></div>
+        <div class="option">Width: {{button.width}}px<input v-model="button.width"  type="range" min="1" max="500"></div>
+        <div class="option">Height: {{button.height}}px<input v-model="button.height" type="range"  min="1" max="500"></div>
 
-        <div class="demo-button" v-bind:style="{width: button_width + 'px', height: button_height + 'px'}">
+        <div class="demo-button" v-bind:style="{width: button.width + 'px', height: button.height + 'px'}">
             <span>Okay</span>
         </div>
-    </section
+    </section>
+
+    <template v-if="headline.google_font">
+        <link href="https://fonts.googleapis.com/css?family={{headline_font_url}}" rel="stylesheet">
+    </template>
+    <template v-if="paragraph.google_font">
+        <link href="https://fonts.googleapis.com/css?family={{paragraph_font_url}}" rel="stylesheet">
+    </template>
+
 </div>
 <script src="script.js"></script>
 </body>
