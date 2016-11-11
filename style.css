@@ -8,12 +8,20 @@ h1, h2, h3 {
     margin: 0.4em 0;
 }
 
-#app {
+#app, footer {
     padding: 0 10px;
-    height: 100vh;
-    transition: box-shadow 0.5s;
     max-width: 800px;
     margin: 0 auto;
+}
+
+#app {
+    min-height: 95vh;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+}
+
+footer {
+    margin: 10px auto;
 }
 
 .option {
