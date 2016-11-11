@@ -22,7 +22,10 @@ var vm = new Vue({
             font_family: "Verdana",
             google_font: false
         },
-
+        viewport: {
+            width: "",
+            height: ""
+        }
     },
     computed: {
         headline_font_url: function (){
@@ -83,11 +86,24 @@ var vm = new Vue({
     watch: {
     },
     methods: {
-        example: function () {
-
-        },
+         getDimensions: function() {
+             this.viewport.width = window.innerWidth;
+             this.viewport.height = window.innerHeight;
+        }
     },
     config: {
         debug: true
     }
 });
+
+window.onresize = vm.getDimensions;
+
+ready(vm.getDimensions)
+
+function ready(fn) {
+    if (document.readyState != 'loading'){
+        fn();
+    } else {
+        document.addEventListener('DOMContentLoaded', fn);
+    }
+}
