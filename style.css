@@ -20,12 +20,14 @@ h1, h2, h3 {
     box-sizing: border-box;
 }
 
-footer {
-    margin: 10px auto;
-}
-
 .option {
     margin: 1em 0;
+}
+
+.size {
+    width: 50px;
+    display: inline-block;
+    text-align: right;
 }
 
 .demo-button {
@@ -43,4 +45,9 @@ footer {
 .demo-button span {
     display: block;
     margin: auto;
+}
+
+footer {
+    clear: left;
+    margin: 10px auto;
 }

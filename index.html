@@ -23,7 +23,7 @@
         <div class="option">
             <h3>Headline</h3>
             Font-Size:
-            {{headline.font_size}}px
+            <span class="size">{{headline.font_size}}px</span>
             <input v-model="headline.font_size" type="range" min="6" max="150"><br>
             Font-Family:
             <input v-model="headline.font_family" type="text">
@@ -32,7 +32,7 @@
         </div>
         <div class="option">
             <h2>Paragraph:</h2>
-            Font-Size: {{paragraph.font_size}}px
+            Font-Size: <span class="size">{{paragraph.font_size}}px</span>
             <input v-model="paragraph.font_size" type="range" min="6" max="150"><br>
             Font-Family:
             <input v-model="paragraph.font_family" type="text">
@@ -55,10 +55,9 @@
     <section class="button-size">
         <h2>Button Styling</h2>
 
-        Width: {{button.width}}px<input v-model="button.width"  type="range" min="1" max="500"><br>
-        Height: {{button.height}}px<input v-model="button.height" type="range"  min="1" max="500"><br>
-        Font-Size:
-        {{headline.font_size}}px
+        Width: <span class="size">{{button.width}}px</span><input v-model="button.width"  type="range" min="1" max="500"><br>
+        Height: <span class="size">{{button.height}}px</span><input v-model="button.height" type="range"  min="1" max="500"><br>
+        Font-Size:<span class="size">{{headline.font_size}}px</span>
         <input v-model="button.font_size" type="range" min="6" max="150"><br>
         Font-Family:
         <input v-model="button.font_family" type="text">
