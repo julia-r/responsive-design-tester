@@ -34,6 +34,9 @@ var vm = new Vue({
         paragraph_font_url: function (){
             return this.paragraph.font_family.replace(" ", "+");
         },
+        button_font_url: function (){
+            return this.button.font_family.replace(" ", "+");
+        },
         headline_text_transform: function (){
             if(this.headline.uppercase){
                 return  "uppercase"
