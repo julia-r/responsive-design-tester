@@ -20,7 +20,8 @@ var vm = new Vue({
             font_size: 12,
             uppercase: false,
             font_family: "Verdana",
-            google_font: false
+            google_font: false,
+            border_radius: 0
         },
         viewport: {
             width: "",
@@ -81,7 +82,8 @@ var vm = new Vue({
                 height: this.button.height + "px",
                 fontSize: this.button.font_size + "px",
                 fontFamily: this.button.font_family,
-                textTransform: this.button_text_transform
+                textTransform: this.button_text_transform,
+                borderRadius: this.button.border_radius + "px"
             }
         }
     },
